@@ -1,4 +1,4 @@
-import environ
+from os import environ
 
 def get_token():
     return environ.get("TOKEN")
