@@ -14,7 +14,7 @@ url = "https://pypi.python.org/simple"
 pylint = "==1.7.4"
 python-telegram-bot = "==8.1.1"
 pygresql = "==5.0.4"
-requests = "*"
+environ = "*"
 
 
 [requires]
