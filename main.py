@@ -2,6 +2,7 @@ import os
 import re
 import logging
 import Config
+import DB
 from hashlib import md5
 from telegram import (ReplyKeyboardMarkup, ReplyKeyboardRemove, KeyboardButton, ChatAction)
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, ConversationHandler, RegexHandler)
@@ -27,7 +28,7 @@ def pleasant_memory(bot, update):
     return CHOOSING
 
 def co_photography(bot, update):
-    update.message.reply_text(update.message.text + 'cofoto')
+    bot.send_photo(update.message.chat_id, DB.get_random_co_photography())
     return CHOOSING
 
 def lets_do(bot, update):
