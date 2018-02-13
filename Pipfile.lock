@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "34e24f30ace7eb6ae880ff758eb2f1a0aca50f8753b3940b7c7e3bd82d5c667d"
+            "sha256": "2f825efdf399f9fc95f413305c78a56b35ea278bd2751a14265d80b3ecdcdc83"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -43,6 +43,13 @@
             ],
             "version": "==2018.1.18"
         },
+        "emoji": {
+            "hashes": [
+                "sha256:a06410d5fec2bb81a80d215d9280779492b109bfc79f87e977a8299380802d9c",
+                "sha256:d8bc4a528b0584b755cc160d98a8e6169d4896f2a5be8a964815517ae7ab298e"
+            ],
+            "version": "==0.4.5"
+        },
         "future": {
             "hashes": [
                 "sha256:e39ced1ab767b5936646cedba8bcce582398233d6a627067d4c6a454c90cfedb"
@@ -51,11 +58,11 @@
         },
         "isort": {
             "hashes": [
-                "sha256:75e94757591197eb0afeb1f3b54f6517c1a26fecaeab2b373885739f63de3e66",
-                "sha256:77502c541ad5c40a158932498bf6177bb663d8a2662b50f02a59b906419ba699",
-                "sha256:34929af733faadf884da29d83e7df1884363b3cc647a48e000b3c5cc13d17549"
+                "sha256:ec9ef8f4a9bc6f71eec99e1806bfa2de401650d996c59330782b89a5555c1497",
+                "sha256:1153601da39a25b14ddc54955dbbacbb6b2d19135386699e2ad58517953b34af",
+                "sha256:b9c40e9750f3d77e6e4d441d8b0266cf555e7cdabdcff33c4fd06366ca761ef8"
             ],
-            "version": "==4.3.3"
+            "version": "==4.3.4"
         },
         "lazy-object-proxy": {
             "hashes": [

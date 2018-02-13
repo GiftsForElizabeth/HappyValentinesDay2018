@@ -4,6 +4,7 @@ import logging
 import Config
 import DB
 from hashlib import md5
+from emoji import emojize
 from telegram import (ReplyKeyboardMarkup, ReplyKeyboardRemove, KeyboardButton, ChatAction)
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, ConversationHandler, RegexHandler)
 
@@ -24,8 +25,8 @@ VERIFY, CHOOSING = range(2)
 Elizabeth_id = None
 
 def pleasant_memory(bot, update):
-	m = DB.get_random_pleasant_memory()
-    bot.send_photo(update.message.chat_id, mem['img_url'], caption=mem['msg'])
+    m = DB.get_random_pleasant_memory()
+    bot.send_photo(update.message.chat_id, m['img_url'], caption=emojize(m['msg'], use_aliases=True))
     return CHOOSING
 
 def co_photography(bot, update):
@@ -33,8 +34,8 @@ def co_photography(bot, update):
     return CHOOSING
 
 def lets_do(bot, update):
-	ld = DB.get_random_lets_do()
-    bot.send_photo(update.message.chat_id, ld['img_url'], caption=ld['msg'])
+    ld = DB.get_random_lets_do()
+    bot.send_photo(update.message.chat_id, ld['img_url'], caption=emojize(ld['msg'], use_aliases=True))
     return CHOOSING
 
 def present(bot, update):
@@ -85,12 +86,10 @@ def main():
         fallbacks=[CommandHandler('start', start)]
     )
     dpt.add_handler(conv_handler)
-    # dpt.add_error_handler(error)
 
-    # env = ParseConfig.get_env()
-    updater.start_polling()
-    # updater.start_webhook(listen="0.0.0.0", port=port, url_path=token)
-    # updater.bot.set_webhook('https://' + Config.get_url() + '.herokuapp.com/' + token)
+    # updater.start_polling()
+    updater.start_webhook(listen="0.0.0.0", port=port, url_path=token)
+    updater.bot.set_webhook('https://' + Config.get_url() + '.herokuapp.com/' + token)
 
     updater.idle()
 
