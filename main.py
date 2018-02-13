@@ -24,7 +24,8 @@ VERIFY, CHOOSING = range(2)
 Elizabeth_id = None
 
 def pleasant_memory(bot, update):
-    update.message.reply_text(update.message.text + 'memory')
+	m = DB.get_random_pleasant_memory()
+    bot.send_photo(update.message.chat_id, mem['img_url'], caption=mem['msg'])
     return CHOOSING
 
 def co_photography(bot, update):
@@ -32,7 +33,8 @@ def co_photography(bot, update):
     return CHOOSING
 
 def lets_do(bot, update):
-    update.message.reply_text(update.message.text + 'letsdo')
+	ld = DB.get_random_lets_do()
+    bot.send_photo(update.message.chat_id, ld['img_url'], caption=ld['msg'])
     return CHOOSING
 
 def present(bot, update):
